@@ -48,9 +48,21 @@ namespace BudgetManager
 
             // Get the expense details from the form fields
             string category = textBoxCateg.Text;
-            decimal amount = decimal.Parse(textBoxAmount.Text);
+            string amountText = textBoxAmount.Text;
             DateTime date = dateIncomePicker.Value;
             string description = textBoxDesc.Text;
+
+            if (string.IsNullOrEmpty(category) || string.IsNullOrEmpty(description))
+            {
+                MessageBox.Show("Please enter all the required values.", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Exit the method to prevent further processing
+            }
+
+            if (!decimal.TryParse(amountText, out decimal amount))
+            {
+                MessageBox.Show("Invalid amount. Please enter a valid numeric value.", "Invalid Amount", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Exit the method to prevent further processing
+            }
 
             // Write the expense details to the worksheet
             worksheet.Cells[lastRow + 1, 1].Value = category;

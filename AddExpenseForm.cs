@@ -46,11 +46,25 @@ namespace BudgetManager
             // Get the last used row in the worksheet
             int lastRow = worksheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell).Row;
 
+
             // Get the expense details from the form fields
             string category = textBoxCateg.Text;
-            decimal amount = decimal.Parse(textBoxAmount.Text);
+            string amountText = textBoxAmount.Text;
             DateTime date = dateExpensePicker.Value;
             string description = textBoxDesc.Text;
+
+            if (string.IsNullOrEmpty(category) || string.IsNullOrEmpty(description))
+            {
+                MessageBox.Show("Please enter all the required values.", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Exit the method to prevent further processing
+            }
+
+            if (!decimal.TryParse(amountText, out decimal amount))
+            {
+                MessageBox.Show("Invalid amount. Please enter a valid numeric value.", "Invalid Amount", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Exit the method to prevent further processing
+            }
+
 
             if (amount > GlobalVariables.CashLeft)
                 MessageBox.Show("You don't have enough money!", "Try again!", MessageBoxButtons.OK, MessageBoxIcon.Information);
