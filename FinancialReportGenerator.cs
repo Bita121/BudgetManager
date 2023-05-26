@@ -42,6 +42,8 @@ namespace YourNamespace
 
             // Calculate the total expense
             decimal totalExpense = expenses.Sum(expense => expense.Amount);
+
+            decimal netIncome = totalIncome - totalExpense;
             // Find the biggest income amount
             decimal maxIncomeAmount = incomes.Max(income => income.Amount);
 
@@ -85,6 +87,10 @@ namespace YourNamespace
             Word.Paragraph biggestExpenseParagraph = document.Content.Paragraphs.Add();
             biggestExpenseParagraph.Range.Text = $"The Biggest Expense: {maxExpenseAmount}";
             biggestExpenseParagraph.Range.InsertParagraphAfter();
+
+            Word.Paragraph netIncomeParagraph = document.Content.Paragraphs.Add();
+            netIncomeParagraph.Range.Text = $"Net Income: {netIncome}";
+            netIncomeParagraph.Range.InsertParagraphAfter();
 
             // Save the Word document
             document.Save();

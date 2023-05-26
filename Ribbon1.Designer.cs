@@ -39,6 +39,7 @@
             this.AddExpense = this.Factory.CreateRibbonButton();
             this.AddIncome = this.Factory.CreateRibbonButton();
             this.GenerateReport = this.Factory.CreateRibbonButton();
+            this.GoalsSetting = this.Factory.CreateRibbonButton();
             this.tab1.SuspendLayout();
             this.group1.SuspendLayout();
             this.SuspendLayout();
@@ -55,6 +56,7 @@
             this.group1.Items.Add(this.AddExpense);
             this.group1.Items.Add(this.AddIncome);
             this.group1.Items.Add(this.GenerateReport);
+            this.group1.Items.Add(this.GoalsSetting);
             this.group1.Label = "BudgetManager";
             this.group1.Name = "group1";
             // 
@@ -75,6 +77,12 @@
             this.GenerateReport.Label = "Generate Report";
             this.GenerateReport.Name = "GenerateReport";
             this.GenerateReport.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.GenerateReport_Click);
+            // 
+            // GoalsSetting
+            // 
+            this.GoalsSetting.Label = "Goals Setting";
+            this.GoalsSetting.Name = "GoalsSetting";
+            this.GoalsSetting.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button1_Click);
             // 
             // Ribbon1
             // 
@@ -97,6 +105,7 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton AddExpense;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton AddIncome;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton GenerateReport;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton GoalsSetting;
     }
 
     partial class ThisRibbonCollection

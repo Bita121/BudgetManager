@@ -11,6 +11,7 @@ namespace BudgetManager
         public static decimal CashLeft { get; set; } = 0;
         public static List<Expenses> listExpenses = new List<Expenses>();
         public static List<Incomes> listIncomes = new List<Incomes>();
+        public static List<Goals> listGoals = new List<Goals>();
 
     }
 

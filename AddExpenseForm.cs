@@ -31,7 +31,13 @@ namespace BudgetManager
 
             // Get the active worksheet
             Excel.Worksheet worksheet = workbook.ActiveSheet;
-            
+
+            if (worksheet.Name == "Goals")
+            {
+                MessageBox.Show("Please move to the first sheet before adding expenses.", "Invalid Operation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Exit the method to prevent further processing
+            }
+
             // Check if it's the first time adding values
             if (worksheet.Cells[1, 1].Value == null)
             {

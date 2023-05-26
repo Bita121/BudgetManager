@@ -194,6 +194,13 @@
     <Compile Include="Expenses.cs" />
     <Compile Include="FinancialReportGenerator.cs" />
     <Compile Include="GlobalVariables.cs" />
+    <Compile Include="Goals.cs" />
+    <Compile Include="GoalSettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GoalSettingForm.Designer.cs">
+      <DependentUpon>GoalSettingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Incomes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -203,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddIncomeForm.resx">
       <DependentUpon>AddIncomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GoalSettingForm.resx">
+      <DependentUpon>GoalSettingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

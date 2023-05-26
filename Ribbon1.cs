@@ -31,5 +31,11 @@ namespace BudgetManager
             FinancialReportGenerator reportGenerator = new FinancialReportGenerator();
             reportGenerator.GenerateFinancialReport();
         }
+
+        private void button1_Click(object sender, RibbonControlEventArgs e)
+        {
+            GoalSettingForm goalSettingForm = new GoalSettingForm();
+            goalSettingForm.Show();
+        }
     }
 }
