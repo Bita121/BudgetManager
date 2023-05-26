@@ -41,10 +41,7 @@
             this.textBoxAmountNOw = new System.Windows.Forms.TextBox();
             this.dateTimePickerTargetDate = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBoxExistingGoalName = new System.Windows.Forms.TextBox();
-            this.AddMoney = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -162,53 +159,23 @@
             this.label7.TabIndex = 15;
             this.label7.Text = "OR";
             // 
-            // label8
+            // button1
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(442, 117);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(334, 29);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Add money to existing goal!";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(473, 189);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(101, 20);
-            this.label9.TabIndex = 17;
-            this.label9.Text = "Goal name:";
-            // 
-            // textBoxExistingGoalName
-            // 
-            this.textBoxExistingGoalName.Location = new System.Drawing.Point(613, 189);
-            this.textBoxExistingGoalName.Name = "textBoxExistingGoalName";
-            this.textBoxExistingGoalName.Size = new System.Drawing.Size(119, 20);
-            this.textBoxExistingGoalName.TabIndex = 18;
-            // 
-            // AddMoney
-            // 
-            this.AddMoney.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddMoney.Location = new System.Drawing.Point(521, 295);
-            this.AddMoney.Name = "AddMoney";
-            this.AddMoney.Size = new System.Drawing.Size(174, 30);
-            this.AddMoney.TabIndex = 19;
-            this.AddMoney.Text = "Add Money!";
-            this.AddMoney.UseVisualStyleBackColor = true;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(458, 143);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(277, 105);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Add Money to an existing GOAL!";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // GoalSettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.AddMoney);
-            this.Controls.Add(this.textBoxExistingGoalName);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dateTimePickerTargetDate);
             this.Controls.Add(this.textBoxAmountNOw);
@@ -245,9 +212,6 @@
         private System.Windows.Forms.TextBox textBoxAmountNOw;
         private System.Windows.Forms.DateTimePicker dateTimePickerTargetDate;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBoxExistingGoalName;
-        private System.Windows.Forms.Button AddMoney;
+        private System.Windows.Forms.Button button1;
     }
 }

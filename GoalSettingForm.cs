@@ -61,12 +61,7 @@ namespace BudgetManager
             }
 
             // Create a new instance of the Goals class and populate its properties
-            Goals goal = new Goals();
-                goal.GoalName = textBoxGoalName.Text;
-                goal.TargetAmount = targetAmount;
-                goal.AmountNow = amountNow;
-                goal.dateDeadline = dateTimePickerTargetDate.Value;
-                goal.AdditionalNotes = textBoxAdditionalNotes.Text;
+            Goals goal = new Goals(textBoxGoalName.Text,targetAmount,amountNow,dateTimePickerTargetDate.Value,textBoxAdditionalNotes.Text);
 
                 // Add the goal to the list of goals in GlobalVariables
                 GlobalVariables.listGoals.Add(goal);
@@ -97,6 +92,7 @@ namespace BudgetManager
                 goalsWorksheet.Cells[1, 3].Value = "Amount Now";
                 goalsWorksheet.Cells[1, 4].Value = "Deadline";
                 goalsWorksheet.Cells[1, 5].Value = "Additional Notes";
+                goalsWorksheet.Cells[1, 6].Value = "Progress";
             }
             else
             {
@@ -113,9 +109,10 @@ namespace BudgetManager
                 goalsWorksheet.Cells[startRow, 3].Value = goal.AmountNow;
                 goalsWorksheet.Cells[startRow, 4].Value = goal.dateDeadline;
                 goalsWorksheet.Cells[startRow, 5].Value = goal.AdditionalNotes;
+                goalsWorksheet.Cells[startRow, 6].Value = goal.GoalProgress + "%";
 
-                // Save the workbook
-                workbook.Save();
+            // Save the workbook
+            workbook.Save();
 
             // Clear the form fields
             textBoxGoalName.Text = string.Empty;
@@ -127,6 +124,17 @@ namespace BudgetManager
             // Show a success message
             MessageBox.Show("Goal added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             
+        }
+
+        private void AddMoney_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddAmountToExistentGoalForm addAmountToExistentGoalForm = new AddAmountToExistentGoalForm();
+            addAmountToExistentGoalForm.ShowDialog();
         }
     }
 }
