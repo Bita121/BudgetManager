@@ -11,12 +11,11 @@ namespace BudgetManager
 {
     public partial class ThisAddIn
     {
-        private AddExpenseForm expenseEntryForm;
+        
         
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
-            expenseEntryForm = new AddExpenseForm();
-            expenseEntryForm.Show();
+            
             
         }
 

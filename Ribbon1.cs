@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using YourNamespace;
 
 namespace BudgetManager
 {
@@ -23,6 +24,12 @@ namespace BudgetManager
         {
             AddIncomeForm incomeForm = new AddIncomeForm();
             incomeForm.Show();
+        }
+
+        private void GenerateReport_Click(object sender, RibbonControlEventArgs e)
+        {
+            FinancialReportGenerator reportGenerator = new FinancialReportGenerator();
+            reportGenerator.GenerateFinancialReport();
         }
     }
 }

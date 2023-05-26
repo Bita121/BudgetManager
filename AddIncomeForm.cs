@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
 
 
+
 namespace BudgetManager
 {
     public partial class AddIncomeForm : Form
@@ -26,6 +27,7 @@ namespace BudgetManager
 
         private void ADDIncome_Click(object sender, EventArgs e)
         {
+
             // Get the active workbook
             Excel.Workbook workbook = Globals.ThisAddIn.Application.ActiveWorkbook;
 
@@ -72,6 +74,13 @@ namespace BudgetManager
             worksheet.Cells[lastRow + 1, 5].Value = "Income";
             worksheet.Cells[2, 6].Value = GlobalVariables.CashLeft += amount;
 
+            //Add incomes to list
+            Incomes income = new Incomes(category, amount, description, date);
+
+
+            // Add the income object to the list
+            GlobalVariables.listIncomes.Add(income);
+
             // Clear the form fields
             textBoxCateg.Text = string.Empty;
             textBoxAmount.Text = string.Empty;
@@ -80,6 +89,11 @@ namespace BudgetManager
 
             // Show a success message
             MessageBox.Show("Income added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void AddIncomeForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

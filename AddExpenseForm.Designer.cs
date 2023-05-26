@@ -136,6 +136,7 @@
             this.Controls.Add(this.dateExpensePicker);
             this.Name = "AddExpenseForm";
             this.Text = "BudgetManagerApp";
+            this.Load += new System.EventHandler(this.AddExpenseForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

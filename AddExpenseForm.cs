@@ -93,5 +93,10 @@ namespace BudgetManager
         {
 
         }
+
+        private void AddExpenseForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

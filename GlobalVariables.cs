@@ -9,6 +9,9 @@ namespace BudgetManager
     public static class GlobalVariables
     {
         public static decimal CashLeft { get; set; } = 0;
+        public static List<Expenses> listExpenses;
+        public static List<Incomes> listIncomes = new List<Incomes>();
+
     }
 
 }

@@ -164,6 +164,7 @@
             this.Controls.Add(this.textBoxAmount);
             this.Controls.Add(this.textBoxCateg);
             this.Name = "AddIncomeForm";
+            this.Load += new System.EventHandler(this.AddIncomeForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
