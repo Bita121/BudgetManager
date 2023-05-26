@@ -11,10 +11,12 @@ using Excel = Microsoft.Office.Interop.Excel;
 
 
 
+
 namespace BudgetManager
 {
     public partial class AddIncomeForm : Form
     {
+
         public AddIncomeForm()
         {
             InitializeComponent();

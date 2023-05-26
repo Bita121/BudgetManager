@@ -78,6 +78,13 @@ namespace BudgetManager
                 worksheet.Cells[lastRow + 1, 5].Value = "Expense";
                 worksheet.Cells[2, 6].Value = GlobalVariables.CashLeft -= amount;
 
+                //Add expenses to list
+                Expenses expense = new Expenses(category, amount, description, date);
+
+
+                // Add the income object to the list
+                GlobalVariables.listExpenses.Add(expense);
+
                 // Clear the form fields
                 textBoxCateg.Text = string.Empty;
                 textBoxAmount.Text = string.Empty;

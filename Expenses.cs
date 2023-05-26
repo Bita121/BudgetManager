@@ -19,6 +19,13 @@ namespace BudgetManager
             Description = string.Empty;
             Date = DateTime.MinValue;
         }
+        public Expenses(string  category, decimal amount, string description, DateTime date)
+        {
+            Category=category;
+            Amount=amount;
+            Description=description;
+            Date = date;
+        }
 
     }
 }
