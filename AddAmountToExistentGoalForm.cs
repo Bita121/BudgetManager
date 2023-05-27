@@ -65,6 +65,8 @@ namespace BudgetManager
                 // Add the amount to the existing goal
                 goal.AmountNow += amountToAdd;
                 goal.GoalProgress = goal.AmountNow / goal.TargetAmount;
+                decimal remainingAmount = goal.TargetAmount - goal.AmountNow;
+
 
                 // Get the active workbook
                 Excel.Workbook workbook = Globals.ThisAddIn.Application.ActiveWorkbook;
@@ -85,7 +87,7 @@ namespace BudgetManager
                     workbook.Save();
 
                     // Show a success message
-                    MessageBox.Show("Amount added to the goal successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Amount added to the goal successfully.\nYou can only add " + remainingAmount + " more", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }      
             }
             else
